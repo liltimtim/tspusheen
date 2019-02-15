@@ -87,7 +87,7 @@ router.post(
  */
 router.post(
   "/register",
-  (req, res, next) => Utils.requireKey(req, res, next),
+  (req, res, next) => HeaderSecurity.requireKey(req, res, next),
   async (req, res) =>
     await Utils.performAction(req, res, DeviceController.registerDevice)
 );

@@ -34,7 +34,7 @@ const router = express.Router();
  */
 router.get(
   "/applications/:applicationId",
-  (req, res, next) => Utils.requireAdminKey(req, res, next),
+  (req, res, next) => HeaderSecurity.requireAdminKey(req, res, next),
   async (req, res) =>
     await Utils.performAction(req, res, AdminController.getApplication)
 );
@@ -68,7 +68,7 @@ router.get(
  */
 router.get(
   "/applications/:applicationId/reset",
-  (req, res, next) => Utils.requireAdminKey(req, res, next),
+  (req, res, next) => HeaderSecurity.requireAdminKey(req, res, next),
   async (req, res) => await Utils.performAction(req, res, resetSecretKey)
 );
 
@@ -98,7 +98,7 @@ router.get(
  */
 router.get(
   "/applications",
-  (req, res, next) => Utils.requireAdminKey(req, res, next),
+  (req, res, next) => HeaderSecurity.requireAdminKey(req, res, next),
   async (req, res) => await Utils.performAction(req, res, getAllApplications)
 );
 
