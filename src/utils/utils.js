@@ -103,7 +103,7 @@ export class HeaderSecurity {
 
   static clientKeyMatchesApplication(clientKey, cb) {
     Application.findOne({
-      client_application_key: clientKey
+      client_key: clientKey
     })
       .then(app => {
         if (!app) {

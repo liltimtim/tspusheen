@@ -1,7 +1,7 @@
 import express from "express";
 import passport from "passport";
 import Device from "../../models/Device";
-import { Utils } from "../../utils/utils";
+import { Utils, HeaderSecurity } from "../../utils/utils";
 import Application from "../../models/Application";
 
 const router = express.Router();
