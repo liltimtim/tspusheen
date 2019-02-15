@@ -61,8 +61,8 @@ export class HeaderSecurity {
    * @param {*} next
    */
   static requireKey(req, res, next) {
-    if (req.headers["client_application_key"]) {
-      const { client_application_key } = req.headers;
+    const { client_application_key } = req.headers;
+    if (client_application_key) {
       this.clientKeyMatchesApplication(client_application_key, matches => {
         if (matches) {
           return next(null);
